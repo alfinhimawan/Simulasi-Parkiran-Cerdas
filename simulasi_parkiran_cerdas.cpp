@@ -15,7 +15,8 @@ int main() {
     }
 
     cout << "Kapasitas parkir berhasil diatur: " << kapasitas << " slot." << endl;
-    
+
+    // Array untuk menyimpan data kendaraan
     string plat[100];
     string jenis[100];
     int jam[100];
@@ -58,7 +59,17 @@ int main() {
                 break;
 
             case 3:
-                cout << "Fitur tampilkan status parkir akan dikembangkan di tahap berikutnya.\n";
+                cout << "\n=== Status Parkir Sementara ===\n";
+                if (jumlahKendaraan == 0) {
+                    cout << "Belum ada kendaraan di parkir.\n";
+                } else {
+                    for (int i = 0; i < jumlahKendaraan; i++) {
+                        cout << "Slot " << i+1 << ": "
+                             << plat[i] << " (" << jenis[i] << ") "
+                             << "Masuk: " << jam[i] << ":" << menit[i] << endl;
+                    }
+                }
+                cout << "==============================\n";
                 break;
 
             case 4:

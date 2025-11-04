@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-    int kapasitas;   
+    int kapasitas;
     int jumlahKendaraan = 0;
 
     cout << "Masukkan kapasitas parkir: ";
@@ -15,7 +15,7 @@ int main() {
     }
 
     cout << "Kapasitas parkir berhasil diatur: " << kapasitas << " slot." << endl;
-
+    
     string plat[100];
     string jenis[100];
     int jam[100];
@@ -33,17 +33,38 @@ int main() {
 
         switch(pilihan) {
             case 1:
-                cout << "Fitur tambah kendaraan akan dikembangkan pada tahap berikutnya.\n";
+                if (jumlahKendaraan >= kapasitas) {
+                    cout << "Parkiran penuh! Tidak bisa menambah kendaraan.\n";
+                } else {
+                    cout << "Masukkan plat nomor: ";
+                    cin >> plat[jumlahKendaraan];
+
+                    cout << "Masukkan jenis kendaraan (Mobil/Motor): ";
+                    cin >> jenis[jumlahKendaraan];
+
+                    cout << "Masukkan jam masuk (0-23): ";
+                    cin >> jam[jumlahKendaraan];
+
+                    cout << "Masukkan menit masuk (0-59): ";
+                    cin >> menit[jumlahKendaraan];
+
+                    jumlahKendaraan++;
+                    cout << "Kendaraan berhasil ditambahkan.\n";
+                }
                 break;
+
             case 2:
-                cout << "Fitur keluar kendaraan akan dikembangkan pada tahap berikutnya.\n";
+                cout << "Fitur keluar kendaraan akan dikembangkan di tahap berikutnya.\n";
                 break;
+
             case 3:
-                cout << "Fitur tampilkan status parkir akan dikembangkan pada tahap berikutnya.\n";
+                cout << "Fitur tampilkan status parkir akan dikembangkan di tahap berikutnya.\n";
                 break;
+
             case 4:
                 cout << "Keluar program.\n";
                 break;
+
             default:
                 cout << "Pilihan tidak valid, coba lagi.\n";
         }

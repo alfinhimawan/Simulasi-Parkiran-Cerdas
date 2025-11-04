@@ -9,14 +9,20 @@ Tujuan program ini adalah:
 - Mengurutkan kendaraan berdasarkan waktu masuk (prioritas kendaraan lama).  
 - Mempermudah pengelolaan parkir dan monitoring slot kosong.  
 
-## Fitur Utama (Tahap 1)
+## Fitur Utama
+**Tahap 1**
 - Input kapasitas parkiran.  
 - Menu utama dengan opsi:
   1. Tambah kendaraan (sementara placeholder)  
   2. Keluar kendaraan (sementara placeholder)  
   3. Tampilkan status parkir (sementara placeholder)  
   4. Keluar program  
-- Validasi kapasitas minimal > 0.  
+
+**Tahap 2**
+- Fitur **Tambah Kendaraan**:
+  - Input plat nomor, jenis kendaraan (Mobil/Motor), jam & menit masuk.  
+  - Validasi kapasitas parkir (tidak bisa menambah jika penuh).  
+  - Data kendaraan disimpan ke array untuk pengembangan tahap berikutnya.  
 
 ## Algoritma & Struktur Program
 - **Percabangan:** `if / else` untuk validasi, `switch` untuk menu.  
@@ -26,14 +32,14 @@ Tujuan program ini adalah:
 - **Searching:** akan menggunakan Sequential Search untuk mencari kendaraan berdasarkan plat nomor.  
 
 ## Struktur File
-- `simulasi_parkiran_cerdas.cpp` → kode utama program (Tahap 1).  
+- `simulasi_parkiran_cerdas.cpp` → kode utama program (Tahap 1 & 2).  
 - `README.md` → dokumentasi repo.  
 
 ## Rencana Tahap Berikutnya
-1. Fitur **Tambah Kendaraan** dengan validasi kapasitas.  
-2. Fitur **Keluar Kendaraan** dengan pencarian plat nomor.  
-3. Fitur **Tampilkan Status Parkir** dan sorting kendaraan berdasarkan waktu masuk.  
+1. Fitur **Keluar Kendaraan** dengan pencarian plat nomor.  
+2. Fitur **Tampilkan Status Parkir** dan sorting kendaraan berdasarkan waktu masuk.  
+3. Fitur tambahan lainnya (opsional) seperti laporan slot kosong atau kendaraan lama.  
 
 ## Catatan
-Program ini dibuat untuk **Praktikum mata kuliah Praktik Algoritma Pemrograman**.  
-Tahap 1 masih berupa kerangka program, fitur lengkap akan dikembangkan bertahap.
+Program ini dibuat untuk **praktikum mata kuliah Praktik Algoritma Pemrograman**.  
+Tahap 2 sudah fungsional untuk **input kendaraan**, fitur lain akan dikembangkan bertahap.

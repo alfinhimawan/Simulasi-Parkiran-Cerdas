@@ -170,13 +170,21 @@ NOTE: Saat ini fitur pencarian otomatis sudah tersedia
 - **Target:** Menu pencarian khusus tanpa menghapus data
 - **Kompleksitas:** O(n)
 
+## 📊 Flowchart Program
+
+![Flowchart Sistem Parkir Cerdas](flowchart/Flowchart-Sistem-Parkir-Cerdas.drawio.png)
+
+*Flowchart menunjukkan alur kerja sistem parkir dari menu utama hingga setiap fitur yang tersedia.*
+
 ## 📁 File dalam Project
 
 ```
 Based-Project/
+├── flowchart/
+│   └── Flowchart-Sistem-Parkir-Cerdas.drawio.png
 ├── simulasi_parkiran_cerdas.cpp    # File program utama (75% selesai)
 ├── simulasi_parkiran_cerdas.exe    # File executable hasil compile
-└── README.md                       # File ini (overview project)
+└── README.md                        # File ini (overview project)
 ```
 
 ## 🎯 Rencana Penyelesaian

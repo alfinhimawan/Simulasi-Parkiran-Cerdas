@@ -10,10 +10,10 @@ Program manajemen parkir berbasis kapasitas dan waktu masuk menggunakan C++
 
 ## 📌 Fitur yang Sudah Selesai
 
-✅ **Array 1 Dimensi** - Penyimpanan data plat nomor & waktu masuk  
-✅ **Menu Interaktif** - 6 pilihan menu yang mudah digunakan  
-✅ **Fungsi Modular** - 10 fungsi terpisah untuk kemudahan maintenance  
-✅ **Sequential Search** - Digunakan dalam fitur keluarkan kendaraan  
+✅ **Array 1 Dimensi** - Penyimpanan data plat nomor & waktu masuk
+✅ **Menu Interaktif** - 6 pilihan menu yang mudah digunakan
+✅ **Fungsi Modular** - 10 fungsi terpisah untuk kemudahan maintenance
+✅ **Sequential Search** - Digunakan dalam fitur keluarkan kendaraan
 ✅ **Shift-Left Algorithm** - Penghapusan data dari array
 ✅ **Edge Case Handling** - Validasi parkiran penuh, kosong, dan data tidak ditemukan
 

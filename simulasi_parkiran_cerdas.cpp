@@ -5,10 +5,9 @@ using namespace std;
 
 const int MAX_KAPASITAS = 5;
 
-string platNomor[MAX_KAPASITAS];
-string waktuMasuk[MAX_KAPASITAS];
-
-int jumlahKendaraan = 0;
+string platNomor[MAX_KAPASITAS];    
+string waktuMasuk[MAX_KAPASITAS];   
+int jumlahKendaraan = 0;            
 
 void clearScreen() {
     system("cls");
@@ -147,10 +146,50 @@ void urutkanKendaraan() {
     tampilkanHeader();
     cout << "=== URUTKAN KENDARAAN (BUBBLE SORT) ===" << endl << endl;
     
-    cout << "INFORMASI: Fitur pengurutan sedang dalam tahap pengembangan." << endl;
-    cout << endl;
-    pause();
+    if (jumlahKendaraan == 0) {
+        cout << "ERROR: Parkiran kosong!" << endl;
+        cout << "Tidak ada data untuk diurutkan." << endl;
+        pause();
+        return;
+    }
     
+    cout << "Mengurutkan berdasarkan waktu masuk..." << endl << endl;
+    
+    for (int i = 0; i < jumlahKendaraan - 1; i++) {
+        for (int j = 0; j < jumlahKendaraan - i - 1; j++) {
+            if (waktuMasuk[j] > waktuMasuk[j + 1]) {
+                string tempWaktu = waktuMasuk[j];
+                waktuMasuk[j] = waktuMasuk[j + 1];
+                waktuMasuk[j + 1] = tempWaktu;
+                
+                string tempPlat = platNomor[j];
+                platNomor[j] = platNomor[j + 1];
+                platNomor[j + 1] = tempPlat;
+            }
+        }
+    }
+    
+    cout << "Data berhasil diurutkan!" << endl << endl;
+    
+    cout << "=== HASIL PENGURUTAN ===" << endl;
+    cout << setfill('-') << setw(50) << "-" << endl;
+    cout << setfill(' ');
+    cout << left << setw(5) << "No" 
+         << setw(20) << "Plat Nomor" 
+         << setw(20) << "Waktu Masuk" << endl;
+    cout << setfill('-') << setw(50) << "-" << endl;
+    cout << setfill(' ');
+    
+    for (int i = 0; i < jumlahKendaraan; i++) {
+        cout << left << setw(5) << (i + 1)
+             << setw(20) << platNomor[i]
+             << setw(20) << waktuMasuk[i] << endl;
+    }
+    
+    cout << setfill('-') << setw(50) << "-" << endl;
+    cout << setfill(' ');
+    
+    pause();
 }
 
 void cariKendaraan() {
@@ -158,11 +197,44 @@ void cariKendaraan() {
     tampilkanHeader();
     cout << "=== CARI KENDARAAN (SEQUENTIAL SEARCH) ===" << endl << endl;
     
-    cout << "INFORMASI: Fitur pencarian sedang dalam tahap pengembangan." << endl;
-    cout << endl;
-
-    pause();
+    if (jumlahKendaraan == 0) {
+        cout << "ERROR: Parkiran kosong!" << endl;
+        cout << "Tidak ada data untuk dicari." << endl;
+        pause();
+        return;
+    }
     
+    string plat;
+    cout << "Masukkan plat nomor yang dicari: ";
+    cin >> plat;
+    
+    cout << endl << "Mencari kendaraan..." << endl << endl;
+    
+    int index = -1;
+    for (int i = 0; i < jumlahKendaraan; i++) {
+        if (platNomor[i] == plat) {
+            index = i;
+            break;
+        }
+    }
+    
+    if (index == -1) {
+        cout << "ERROR: Kendaraan dengan plat nomor '" << plat << "' tidak ditemukan!" << endl;
+        cout << "Pastikan plat nomor yang dimasukkan benar." << endl;
+        pause();
+        return;
+    }
+    
+    cout << "Kendaraan ditemukan!" << endl << endl;
+    cout << setfill('-') << setw(50) << "-" << endl;
+    cout << setfill(' ');
+    cout << "Posisi       : " << (index + 1) << endl;
+    cout << "Plat Nomor   : " << platNomor[index] << endl;
+    cout << "Waktu Masuk  : " << waktuMasuk[index] << endl;
+    cout << setfill('-') << setw(50) << "-" << endl;
+    cout << setfill(' ');
+    
+    pause();
 }
 
 void tampilkanMenu() {
